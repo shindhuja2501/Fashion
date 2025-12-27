@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+  
+<script>
+if (localStorage.getItem("role") !== "admin") {
+  window.location.href = "index.html";
+}
+</script>
+
+
+
+  <style>
+    body {
+      background: burlywood;
+    }
+    .sidebar {
+      height: 100vh;
+      background: #111;
+      color: #fff;
+      position: fixed;
+      width: 240px;
+    }
+    .sidebar a {
+      color: #ddd;
+      display: block;
+      padding: 12px 20px;
+      text-decoration: none;
+    }
+    .sidebar a:hover {
+      background: #333;
+      color: #fff;
+    }
+    .content {
+      margin-left: 240px;
+      padding: 20px;
+    }
+    .card {
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ===== SIDEBAR ===== -->
+<div class="sidebar">
+  <h4 class="text-center py-3 border-bottom">Admin Panel</h4>
+
+  <a href="#"><i class="fa fa-dashboard mr-2"></i> Dashboard</a>
+  <a href="#"><i class="fa fa-box mr-2"></i> Products</a>
+  <a href="#"><i class="fa fa-shopping-cart mr-2"></i> Orders</a>
+  <a href="#"><i class="fa fa-users mr-2"></i> Users</a>
+  <a href="#"><i class="fa fa-chart-line mr-2"></i> Reports</a>
+
+  <a href="index.html" onclick="logout()" class="text-danger mt-3">
+    <i class="fa fa-sign-out-alt mr-2"></i> Logout
+  </a>
+</div>
+
+<!-- ===== CONTENT ===== -->
+<div class="content">
+
+  <!-- Top Bar -->
+  <nav class="navbar navbar-light bg-white shadow-sm rounded mb-4">
+    <span class="navbar-brand mb-0 h5">Admin Dashboard</span>
+  </nav>
+
+  <!-- Dashboard Cards -->
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          <i class="fa fa-box fa-2x mb-2 text-primary"></i>
+          <h5>Products</h5>
+          <h4>120</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          <i class="fa fa-shopping-cart fa-2x mb-2 text-success"></i>
+          <h5>Orders</h5>
+          <h4>45</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          <i class="fa fa-users fa-2x mb-2 text-warning"></i>
+          <h5>Users</h5>
+          <h4>78</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          <i class="fa fa-rupee-sign fa-2x mb-2 text-danger"></i>
+          <h5>Revenue</h5>
+          <h4>₹25,000</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="card mt-4 shadow-sm">
+    <div class="card-header">
+      <h5 class="mb-0">Recent Orders</h5>
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th>#</th>
+            <th>Customer</th>
+            <th>Product</th>
+            <th>Amount</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Shindhu</td>
+            <td>Kurti</td>
+            <td>₹599</td>
+            <td><span class="badge badge-success">Completed</span></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Karthi</td>
+            <td>Jacket</td>
+            <td>₹899</td>
+            <td><span class="badge badge-primary">Dispatched</span></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Ravi</td>
+            <td>T-Shirt</T-Shirt></td>
+            <td>₹699</td>
+            <td><span class="badge badge-warning">Pending</span></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Kavya</td>
+            <td>Scarf</td>
+            <td>₹399</td>
+            <td><span class="badge badge-primary">Dispatched</span></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Siva</td>
+            <td>Jacket</td>
+            <td>₹599</td>
+            <td><span class="badge badge-info">Shipped</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/auth.js"></script>
+
+<script>
+if (localStorage.getItem("role") !== "admin") {
+  window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
